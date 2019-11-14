@@ -1,3 +1,11 @@
+###修改配置文件
+$ vim /usr/local/zabbix/etc/zabbix_server.conf 
+AlertScriptsPath=/usr/local/zabbix/alertscripts
+####测试脚本
+$ python zabbix_sendmail.py '1989051805@qq.com' 'Test Mail' 'This is Test Mail'
+
+
+
 #!/usr/bin/python 
 #coding:utf-8 
 import smtplib 
