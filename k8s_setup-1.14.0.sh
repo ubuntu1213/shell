@@ -29,4 +29,13 @@ https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 
 yum -y install kubelet-1.14.0 kubeadm-1.14.0 kubectl-1.14.0 kubernetes-cni-1.14.0
-                                                                                         
+systemctl enable kubelet && systemctl start kubelet
+
+
+kubeadm init \
+--apiserver-advertise-address=0.0.0.0 \
+--image-repository registry.aliyuncs.com/google_containers \
+--kubernetes-version v1.14.1 \
+--service-cidr=10.1.0.0/16 \
+--pod-network-cidr=10.244.0.0/16
+
