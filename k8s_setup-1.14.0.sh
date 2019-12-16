@@ -39,3 +39,6 @@ kubeadm init \
 --service-cidr=10.1.0.0/16 \
 --pod-network-cidr=10.244.0.0/16
 
+
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-legacy.yml
+
